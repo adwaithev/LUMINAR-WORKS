@@ -1,0 +1,10 @@
+
+.main{
+    background-color: red;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    border: 1px solid black;
+}
+.top{
+    margin-left:20px;
+}

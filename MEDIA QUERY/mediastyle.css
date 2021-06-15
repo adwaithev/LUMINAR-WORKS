@@ -1,0 +1,30 @@
+*{
+    box-sizing: border-box;
+}
+.row{
+    width:100% ;
+   min-height:  500px;
+ background-color: teal;
+    display: flex;
+    flex-direction: row;
+}
+.col{
+    width:30%;
+  min-height:100px;
+}
+   
+@media(max-width:500px){
+   .row{
+    flex-direction:column;
+    align-items: center;
+    padding-left: 10px; 
+    padding-right: 10px;
+   } 
+.col{
+   margin-top: 10px;
+    width: 100%;
+   padding: 5px;
+}
+
+}
+    

@@ -1,0 +1,45 @@
+.row{
+    width: 500px;
+    height: 300px;
+    border:1px black solid;
+    background-color: slategray;
+    position: relative;
+    margin: top 10px; ;
+    
+}
+.col-1,.col-2,.col-3{
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+}
+.col-1{
+    background-color: brown;
+    position: absolute;
+    top: 0%;
+    left: 220px;
+}
+.col-2{
+    background-color: rgb(163, 165, 42);
+    position: absolute;
+    top: 0px;
+}
+
+.col-3{
+    background-color: rgb(42, 165, 165);
+    position: absolute;
+    top: 0px;
+    left: 110px; ;
+}
+.fixed-div{
+    background-color: chartreuse;
+    border: solid black 1px;
+    width: 100px;
+    height: 100px;
+    position: fixed;
+}
+.stcky{
+    background-color: rgb(237, 105, 100);
+    position: -webkit-sticky;
+    position: sticky;
+    top:0;
+}

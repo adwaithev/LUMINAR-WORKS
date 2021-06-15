@@ -1,0 +1,36 @@
+body{
+    background-color: black;
+}
+.head{
+    color:rgb(248, 2, 2);
+    text-align: center;
+}
+.sub{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(151, 179, 211);
+    font-style: normal;
+}
+.main{
+    border:1px rgb(255, 252, 252) solid;
+    width: 300px;
+    height: px;
+    background-color:#3d2520;
+    color: white;
+    text-align: center;
+    float: left;
+}
+.galaxy-div{
+    background-color:#242f40;
+    
+    
+}
+.poco-div{
+    background-color:#264024;
+    
+    
+}
+.main h1{
+    color: white;
+    text-align: center;
+    font: size 25px; ;
+}

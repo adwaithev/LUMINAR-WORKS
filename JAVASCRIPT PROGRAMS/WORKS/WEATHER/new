@@ -1,0 +1,8 @@
+      html_data+=`<div class="card" style="width: 18rem;">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><h3>${main_weather}<h3></li>
+    <li class="list-group-item">A second item</li>
+    <li class="list-group-item">A third item</li>
+  </ul>
+</div>`
+let html_data="";

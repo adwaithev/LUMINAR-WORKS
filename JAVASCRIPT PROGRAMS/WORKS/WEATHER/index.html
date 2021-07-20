@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather</title>
+    <script src="https://kit.fontawesome.com/c78f4343ce.js" crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
+    .col_style {
+        background-color: blue;
+        width: 100%;
+        color: white;
+
+    }
+
+    #main {
+        width: 280px;
+        background-color: transparent;
+        margin-top: 5%;
+        color: white;
+        height: 5%;
+        font-family: 'Roboto', sans-serif;
+
+    }
+
+    #time {
+       
+        background-color: transparent;
+        margin-top: 5%;
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        
+       
+
+
+    }
+
+    .item {
+        color: white;
+        text-align: left;
+        padding-left: 5%;
+        font-size: xx-large;
+        font-weight: 900;
+        margin-bottom: 15%;
+        margin-top: 5%;
+
+    }
+
+    .box {
+        width: 220px;
+        margin-top: 10%;
+        color: white;
+        margin-right: 2%;
+
+
+    }
+
+    h2 {
+        padding-left: 8%;
+        margin-right: 2%;
+        margin-bottom: 10%;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 900;
+
+
+    }
+
+    h6 {
+        margin-bottom: 10%;
+        font-family: 'Roboto', sans-serif;
+
+    }
+
+    .bg {
+
+        width: 95%;
+        height: 100%;
+        padding: 15%;
+
+    }
+
+    h2 span {
+        font-size: 20px;
+        margin-left: 2px;
+
+    }
+
+    #cname {
+
+        border: none;
+        background-color: rgba(199, 199, 199, 0.308);
+        resize: none;
+        outline: none;
+        border-radius: 15px;
+        padding: 5%;
+        margin-top: 5%;
+
+    }
+
+    .btn {
+        margin-left: 2%;
+        border-radius: 15px;
+        padding-left: 20%;
+        padding-right: 20%;
+        padding-top: 9%;
+        padding-bottom: 9%;
+        margin-top: 10%;
+    }
+</style>
+
+<body background="images/bg31.jpg">
+
+    <div class="container">
+        
+        <div class="row " style="padding-top: 10px;">
+            <div class="col-lg-3 col-md-2 col-6 "></div>
+            <div class="col-lg-2 col-md-2 col-6 "></div>
+            <div class="col-lg-2 col-md-2 col-6 "></div>
+            <div class="col-lg-2 col-md-2 col-6 "></div>
+            <div class="col-lg-2 col-md-2 col-6 " style="text-align: right;padding-left: 1%;"> <input type="text"
+                    id="cname" placeholder="Enter location"></div>
+            <div class="col-lg-1 col-md-2 col-6 "> <button class="btn btn-danger"
+                    onclick="fetchWeather()">Search</button></div>
+
+
+            <div class="row">
+                <div class="col-lg-6 col-md-2 col-6" id="main"></div>
+                <div class="col-lg-1 col-md-2 col-6"></div>
+                <div class="col-lg-1 col-md-2 col-6"></div>
+                <div class="col-lg-1 col-md-2 col-6"></div>
+                <div class="col-lg-1 col-md-2 col-6"></div>
+                <div class="col-lg-2 col-md-2 col-6" id="time"></div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-2 col-md-6 col-12 box" id="colum2"></div>
+                <div class="col-lg-2 col-md-6 col-12 box" id="colum3"></div>
+                <div class="col-lg-2 col-md-6 col-12 box" id="colum4"></div>
+                <div class="col-lg-2 col-md-6 col-12 box" id="colum5"></div>
+                <div class="col-lg-2 col-md-6 col-12 box" id="colum6"></div>
+                <div class="col-lg-2 col-md-6 col-12 " ></div>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+
+
+
+<script>
+
+    function populate(updates) {
+        let d = new Date()
+        let day = d.getDate();
+        let month = d.getMonth();
+        let year = d.getFullYear();
+        let hour = d.getHours();
+        let minute = d.getMinutes();
+        let seconds = d.getSeconds()
+
+
+        let main_data = "";
+        let col_1 = "";
+        let col_2 = "";
+        let col_3 = "";
+        let col_4 = "";
+        let col_5 = "";
+        let col_6 = "";
+        let last = "";
+
+        let main_weather = updates["weather"][0]["main"]
+        let temperature = updates["main"]["temp"]
+        let feels_like = updates["main"]["feels_like"]
+        let humidity = updates["main"]["humidity"]
+        let pressure = updates["main"]["pressure"]
+        let wind_speed = updates["wind"]["speed"]
+        let city_name = updates["name"]
+
+        let visibility = updates["visibility"]
+        main_data += `<h3 class="item">${city_name}</h3>
+    <h1 class="item"  style="font-size: 65px; font-weight: 900;">${temperature}°​C</h1> 
+    <h1 class="item"  style="font-size: 45px;font-weight: 900;">${main_weather}</h1>`
+
+
+        col_2 = `<div class="bg"><h6><i class="fas fa-thermometer-half" style="margin-right: 10px;"></i>FEELS LIKE<h6>
+        <h2 >${feels_like}</h2></div>`
+        col_3 = `<div class="bg"><h6><i class="fas fa-tint" style="margin-right: 10px;"></i>HUMIDITY<h6>
+        <h2 >${humidity}<span>%</span></h2></div>`
+
+        col_4 = `<div class="bg"><h6><i class="fas fa-" style="margin-right: 10px;"></i>PRESSURE<h6>
+        <h2 >${pressure}</h2></div>`
+
+        col_5 = `<div class="bg"><h6><i class="fas fa-wind" style="margin-right: 10px;"></i>WIND SPEED<h6>
+        <h2 >${wind_speed}<span> km/h</span></h2></div>`
+
+        col_6 = `<div class="bg"><h6><i class="far fa-eye" style="margin-right: 10px;"></i>VISIBILITY<h6>
+        <h2 >${visibility}</h2></div>`
+        last = `<h4>${hour}:${minute}:${seconds}</h4>
+        <h4>${day}-${month}-${year}</h4>`
+
+
+
+
+
+
+        colum2.innerHTML = col_2;
+        colum3.innerHTML = col_3;
+        colum4.innerHTML = col_4;
+        colum5.innerHTML = col_5;
+        colum6.innerHTML = col_6;
+        time.innerHTML = last;
+        main.innerHTML = main_data;
+
+
+
+
+
+    }
+
+    function fetchWeather() {
+        let name = cname.value;
+        let url = `http://api.openweathermap.org/data/2.5/weather?q=${name}&appid=3111a821e1cf5aee74ede6a22f985efc&units=metric`
+        fetch(url).then(res => res.json()).then(data => populate(data))
+    }
+</script>
+
+</html>

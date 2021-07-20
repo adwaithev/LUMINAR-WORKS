@@ -1,0 +1,14 @@
+`<div class="card" style="width: 18rem;">
+  <img src="${flag}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Country Name:${name}</h5>
+   
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Capital:${capital}</li>
+    <li class="list-group-item">Population:${population}</li>
+    <li class="list-group-item">Currency:${currency}</li>
+    <li class="list-group-item">Currency Symbol:${symbol}</li>
+  </ul>
+  
+</div>`

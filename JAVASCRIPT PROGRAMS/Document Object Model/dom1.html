@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocumentObjectModel</title>
+
+</head>
+
+<body>
+    <h1>DocumentObjectModel</h1>
+    
+    <h1>DOM attributes</h1>
+    <ul>
+        <li>URL</li>
+        <li>head</li>
+        <li>links</li>
+    </ul>
+
+    <h2 id="htwo">Document Object Model Methods</h2>
+    <ul>
+        <li>document.getElementsByTagName()</li>
+        <li id="lst">document.getElementById()</li>
+        <li class="one">document.getElementsByClassName()</li>
+        <li class="one">document.getElementsByClassName()</li>
+        <li name="two">document.getElementsByName()</li>
+        <li name="two">document.getElementsByName()</li>
+        <li>document.querySelectorAll()</li>
+        <li id="query">document.querySelector()</li>
+    </ul>
+
+    <a href="">one</a>
+    <a href="">two</a>
+    <a href="">three</a>
+</body>
+<script>
+    //var lis=document.getElementsByTagName("li");
+    //for (let tag of lis){
+    //    tag.style.color="blue";
+    //}
+    //var item1=document.getElementById("lst");
+    //item1.style.color="blue";
+
+    //var item2=document.getElementsByClassName("one");
+    //for(let tag of item2){
+        //tag.style.color="green";
+   // }
+   
+   //var item3=document.getElementsByName("two");
+   //for(let tag of item3){
+       //tag.style.color="purple"
+  // }
+
+   //var item4=document.querySelectorAll("li");
+   //for(let tag of item4){
+     //  tag.style.color="red";
+   //}
+
+   //var item5=document.querySelector("li");
+   //item5.style.color="red"
+   var htwo=document.querySelector("h2");
+  // htwo.textContent="DOM Methods"
+  htwo.innerHTML="<em>DOM Methods<em>"
+   htwo.style.color="cyan"
+</script>
+
+</html>

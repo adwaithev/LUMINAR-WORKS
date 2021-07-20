@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <script src="script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<style>
+    body {
+        background-color: white;
+    }
+
+    .box {
+        background-color: #001cf9 !important;
+
+        justify-content: space-evenly;
+        width: 360px;
+        height: 550px;
+        padding: 5%;
+        color: white;
+        text-align: center;
+
+    }
+
+
+    .inpt-bg {
+        background-color: #E1E7ED;
+        justify-content: space-evenly;
+
+        padding-left: 6%;
+        height: 550px;
+        padding-right: 5%;
+        width: 590px;
+        padding-top: 3%;
+        padding-bottom: 50px;
+
+
+
+    }
+
+    label {
+        margin-bottom: 10px;
+
+    }
+
+    .form-control {
+
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 5%;
+    }
+
+    .container {
+        margin-left: 19%;
+        margin-top: 5%;
+    }
+</style>
+
+
+<body>
+
+    <div class="container">
+
+        <div class="row ">
+            <div class="col-lg-4 col-md-6 col-12 inpt-bg">
+                <p>
+                <h2 style="margin-bottom: 50px;">login</h2>
+                </p>
+                <label>Username</label>
+                <input type="text" name="" id="username" class="form-control" placeholder="Enter username"><br>
+                <label>Password</label>
+                <input type="text" name="" id="password" class="form-control" placeholder=" Enter password"><br>
+
+                <button class="btn btn-primary"
+                    style="padding-right: 115px;padding-left: 115px;margin-top: 10%; margin-left:12% ;"
+                    onclick="signIn()">Log in</button>
+            </div>
+            <div class="col-lg-8 col-md-6 col-12 box">
+
+
+                <h3 style="margin-bottom: 40px;">Welcome back</h3>
+                <h1 style="margin-bottom: 50px;">Stay connected to<br> your accounts<br> 24x7</h1>
+                <p style="font-size:small; margin-bottom:100px;">Don't have an account ?<a href="#"
+                        style="text-decoration: none;color: white;margin-left: 2px;">sign up</a></p>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
